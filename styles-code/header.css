@@ -1,0 +1,118 @@
+
+:root {
+  --header-height: clamp(80px, 14vh, 190px);
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: white;
+  border: none;
+  animation: slideDown 0.6s ease 2s forwards;
+  z-index: 200;
+}
+
+.left-section,
+.right-section {
+  display: flex;
+  align-items: center;
+}
+
+.nav {
+  display: flex;
+  gap: clamp(24px, 6vh, 130px);
+  align-items: center;
+}
+
+.nav-item {
+  font-weight: 500;
+  font-size: clamp(15px, 1vw, 24px);
+  color: rgb(84, 83, 83);
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.nav-item:hover {
+  color:rgb(26, 169, 26);
+  transform: translateY(-4px);
+}
+
+.nav-button {
+  font-size: clamp(15px, 1vw, 24px);
+  font-weight: 500;
+  background-color: rgb(26, 169, 26);
+  color: white;
+  border: none;
+  font-family: "Heebo";
+  border-radius: 6px;
+  padding: clamp(5px, 1vh, 15px) clamp(11px, 1.5vw, 25px);
+  cursor: pointer;
+  transition: 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+}
+
+.nav-button:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  transform: translateY(-1.5px);
+}
+
+.nav-button:active {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  transform: translateY(0);
+  opacity: 0.8;
+}
+
+.school-logo {
+  width: clamp(100px, 7vw, 180px);
+  height: auto;
+}
+
+.hamburger-icon {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 35px;
+  cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+  .nav-item {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 900px) {
+  .nav-item {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 700px) {
+  .nav {
+    display: none;
+  }
+
+  .hamburger-icon {
+    display: flex;
+  }
+
+  .header {
+    justify-content: space-evenly;
+  }
+
+
+  .nav-button {
+    padding: 8px 16px;
+  }
+}
+
+@keyframes slideDown {
+      from { top: -100px; }
+      to { top: 0; }
+    }
